@@ -2,7 +2,7 @@
 {
 
 
-    public DifficultyConfiguration Get(Difficulty difficulty)
+    public DifficultyConfiguration Create(Difficulty difficulty)
     {
         switch (difficulty)
         {
