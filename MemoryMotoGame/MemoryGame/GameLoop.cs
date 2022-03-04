@@ -9,7 +9,6 @@
 
     public void Execute()
     {
-    
         var gameFlow = this.createGameFlow();
         while (true)
         {
@@ -64,7 +63,9 @@
         Console.WriteLine("You won!");
 
         int tries = difficultyConfiguration.GetChances() - chances.getChances();
-        Console.WriteLine("with tries: "+tries);
+        Console.WriteLine("you won with tries: "+tries);
+        new Highscore().Generate(chances);
+
         return AskToTryAgain();
     }
     bool WhenGameWasLost(){

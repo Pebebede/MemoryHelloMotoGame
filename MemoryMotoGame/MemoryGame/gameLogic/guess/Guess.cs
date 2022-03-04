@@ -2,7 +2,7 @@
 {
     private Position position;
     private Word word;
-    private GuessState state;
+    public GuessState state {get;}
     public Guess(Position position, Word word)
     {
         this.position = position;

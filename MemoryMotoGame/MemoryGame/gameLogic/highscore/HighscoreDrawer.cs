@@ -3,13 +3,12 @@
 
     public void DrawScore(int score)
     {
-        string[] highscoreList = new HighscoreLoader().Load();
+        List<string> highscoreList = new HighscoreLoader().Load();
         Console.WriteLine("Please give me your name");
         string playerName = Console.ReadLine();
-        highscoreList
-
-
-
+        highscoreList.Add(playerName+" "+score);
+       // File.WriteAllLinesAsync("highscore.txt", highscoreList);
+        //TODO write disk persistance for HighScores
     }
 
 

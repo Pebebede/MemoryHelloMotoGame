@@ -2,7 +2,7 @@
 {
     public List<Word> Create()
     {
-        string[] lines = File.ReadAllLines(@"C:\Users\piotr\source\repos\MemoryMotoGame\MemoryMotoGame\MemoryGame\dataContent\words.txt");
+        string[] lines = File.ReadAllLines("words.txt");
         List<Word> words = new();
         foreach (string line in lines)
         {
