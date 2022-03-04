@@ -13,8 +13,23 @@
     public Position GetPosition() { return position; }
     public Word GetWord() { return word; }
 
+    public bool TryToCompare(Guess other)
+    {
+        state.isVisible = true;
 
-
+        var wordValue = word.GetValue();
+        var otherWordValue = other.GetWord().GetValue();
+        bool matches = wordValue.Equals(otherWordValue);
+        if (matches)
+        {
+            state.wasGuessed = true;
+        }
+        return matches;
+    }
+    public void HideIfNotGuessed()
+    {
+        state.isVisible = false;
+    }
     public string asText()
     {
 
