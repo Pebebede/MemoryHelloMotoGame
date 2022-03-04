@@ -1,6 +1,6 @@
 ﻿class DifficultyReader
 {
-    public Difficulty DoIt()
+    public Difficulty Choice()
     {
         Console.WriteLine("Pick your difficulty Easy(1) or Hard(2)");
         var key = Console.ReadLine();

@@ -10,22 +10,26 @@
     }
     private List<Position> Fill(List<Position> list)
     {
-        list.Add(new Position('A', 1));
-        list.Add(new Position('A', 2));
-        list.Add(new Position('A', 3));
-        list.Add(new Position('A', 4));
-        list.Add(new Position('B', 1));
-        list.Add(new Position('B', 2));
-        list.Add(new Position('B', 3));
-        list.Add(new Position('B', 4));
-        list.Add(new Position('C', 1));
-        list.Add(new Position('C', 2));
-        list.Add(new Position('C', 3));
-        list.Add(new Position('C', 4));
-        list.Add(new Position('D', 1));
-        list.Add(new Position('D', 2));
-        list.Add(new Position('D', 3));
-        list.Add(new Position('D', 4));
+        PositionRow aRow = PositionRowFactory.createFrom('A');
+        PositionRow bRow = PositionRowFactory.createFrom('B');
+        PositionRow cRow = PositionRowFactory.createFrom('C');
+        PositionRow dRow = PositionRowFactory.createFrom('D');
+
+        List<PositionRow> rows = new List<PositionRow>();
+        rows.Add(aRow);
+        rows.Add(bRow);
+        rows.Add(cRow);
+        rows.Add(dRow);
+
+        int[] columns = new int[] { 1, 2, 3, 4 };
+
+        foreach (PositionRow row in rows)
+        {
+            foreach (int col in columns)
+            {
+                list.Add(new Position(row, col));
+            }
+        }
 
 
         return list;

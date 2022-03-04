@@ -1,9 +1,9 @@
 ﻿class Position
 {
-    char row;
-    int column;
+    public PositionRow row { get; }
+    public int column { get; }
 
-    public Position(char row, int column)
+    public Position(PositionRow row, int column)
     {
         this.row = row;
         this.column = column;
@@ -11,6 +11,6 @@
 
     public string asText()
     {
-        return row + "" + column;
+        return row.letter + "" + column;
     }
 }
