@@ -1,13 +1,13 @@
 class GameFlow
 {
-    public DifficultyConfiguration difficulty {get;}
-    public Chances chances {get;}
+    public DifficultyConfiguration difficulty { get; }
+    public Chances chances { get; }
     private GuessDictionary dictionary;
     private GuessRenderer renderer;
     private WinCondition winConditions;
     private LoseConditions loseConditions;
 
-    public GameFlow (
+    public GameFlow(
      DifficultyConfiguration difficulty,
      GuessDictionary dictionary,
      GuessRenderer renderer,
@@ -23,10 +23,14 @@ class GameFlow
         this.chances = chances;
     }
 
-    public GameLogicResult Execute(){
-        try{
+    public GameLogicResult Execute()
+    {
+        try
+        {
             return TryExcute();
-        }catch(Exception e){
+        }
+        catch (Exception e)
+        {
             Console.WriteLine("Oops something went wrong");
             Console.WriteLine(e);
             return GameLogicResult.GameContinues;
@@ -68,8 +72,10 @@ class GameFlow
         return GameLogicResult.GameContinues;
     }
 
-    private void HideAllNotGuessed(){
-        foreach(Guess guess in this.dictionary.FindAll()){
+    private void HideAllNotGuessed()
+    {
+        foreach (Guess guess in this.dictionary.FindAll())
+        {
             guess.HideIfNotGuessed();
         }
     }
@@ -79,7 +85,7 @@ class GameFlow
     {
         Console.WriteLine("Provide position:");
         var userInput = Console.ReadLine();
-        Position position = new StringTranscription().GetPosition(userInput);
+        Position position = new TextToPositionConverter().GetPosition(userInput);
         Guess guess = dictionary.FindByPosition(position);
         guess.Show();
         return guess;
@@ -95,8 +101,8 @@ class GameFlow
     void DrawUI()
     {
         Console.WriteLine("--------------------------------------------------------");
-        Console.WriteLine("|| Difficulty "+difficulty.difficulty.ToString().ToLower());
-        Console.WriteLine("|| Chances "+chances.getChances());
+        Console.WriteLine("|| Difficulty " + difficulty.difficulty.ToString().ToLower());
+        Console.WriteLine("|| Chances " + chances.getChances());
         Console.WriteLine("--------------------------------------------------------");
 
     }

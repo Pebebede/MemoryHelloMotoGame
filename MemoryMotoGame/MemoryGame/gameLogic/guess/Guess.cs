@@ -13,6 +13,7 @@
     public Position GetPosition() { return position; }
     public Word GetWord() { return word; }
 
+    public GuessState GetState() { return state; }
     public bool TryToCompare(Guess other)
     {
         state.isVisible = true;
@@ -32,7 +33,8 @@
         state.isVisible = false;
     }
 
-    public void Show(){
+    public void Show()
+    {
         state.isVisible = true;
     }
     public string asText()

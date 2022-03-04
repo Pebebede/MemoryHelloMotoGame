@@ -1,10 +1,12 @@
 ﻿class Highscore
 {
-    public Highscore(Chances leftChances, TimeScore time)
+    public void Generate(Chances leftChances, TimeScore time)
     {
-
-
-
+        int chancePoints = CalculateChancePoints(leftChances);
+        int timePoints = CalculateTimePoints(time);
+        int score = chancePoints + timePoints;
+        Console.WriteLine("Congratulations! Your Score: " + score + " its AWESOME! You can write your name on Highscore board!");
+        new HighscoreDrawer().DrawScore(score);
 
     }
 

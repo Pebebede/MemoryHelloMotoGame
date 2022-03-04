@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MemoryMotoGame.MemoryGame.gameLogic.highscore
+﻿class HighscoreLoader
 {
-    internal class HighscoreLoader
+    public List<String> Load()
     {
+
+        string[] arrayLine = System.IO.File.ReadAllLines(@"C:\Users\piotr\source\repos\MemoryMotoGame\MemoryMotoGame\MemoryGame\dataContent\Highscore.txt");
+        List<Word> words = new();
+        foreach (string line in lines)
+        {
+            words.Add(new Word(line));
+        }
+        return lines;
     }
+
 }
+

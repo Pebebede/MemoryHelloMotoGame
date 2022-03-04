@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MemoryMotoGame.MemoryGame.gameLogic.highscore
+﻿class HighscoreDrawer
 {
-    internal class HighscoreDrawer
+
+    public void DrawScore(int score)
     {
+        string[] highscoreList = new HighscoreLoader().Load();
+        Console.WriteLine("Please give me your name");
+        string playerName = Console.ReadLine();
+        highscoreList
+
+
+
     }
+
+
 }
+
