@@ -1,9 +1,0 @@
-﻿class GamePrepare
-{
-
-    public GamePrepare()
-    {
-
-    }
-}
-

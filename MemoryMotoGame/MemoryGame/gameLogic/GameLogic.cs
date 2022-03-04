@@ -35,6 +35,8 @@ class GameFlow
 
     private GameLogicResult TryExcute()
     {
+        HideAllNotGuessed();
+
         DrawUI();
         DrawGuesses();
 
@@ -45,8 +47,6 @@ class GameFlow
         DrawGuesses();
 
         bool matches = first.TryToCompare(second);
-        first.HideIfNotGuessed();
-        second.HideIfNotGuessed();
 
         if (!matches)
         {
@@ -68,6 +68,11 @@ class GameFlow
         return GameLogicResult.GameContinues;
     }
 
+    private void HideAllNotGuessed(){
+        foreach(Guess guess in this.dictionary.FindAll()){
+            guess.HideIfNotGuessed();
+        }
+    }
 
 
     Guess PickGuess()

@@ -17,6 +17,10 @@
     {
         return guessMap[position.asText()];
     }
+    public List<Guess> FindAll()
+    {
+        return guessMap.Values.ToList();
+    }
 
 
 }
