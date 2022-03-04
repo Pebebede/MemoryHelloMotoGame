@@ -8,7 +8,7 @@
     }
 
 
-    public Boolean hasBeenMet()
+    public Boolean HasBeenMet()
     {
         Boolean check = true;
         foreach (Guess guess in guesses)
