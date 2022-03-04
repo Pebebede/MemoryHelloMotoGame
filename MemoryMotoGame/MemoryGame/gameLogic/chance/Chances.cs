@@ -12,7 +12,7 @@
         return this.chances;
     }
 
-    void Decrease()
+    public void Decrease()
     {
         this.chances -= 1;
     }

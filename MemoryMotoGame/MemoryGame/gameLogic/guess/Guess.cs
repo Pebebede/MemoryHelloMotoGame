@@ -23,12 +23,17 @@
         if (matches)
         {
             state.wasGuessed = true;
+            other.state.wasGuessed = true;
         }
         return matches;
     }
     public void HideIfNotGuessed()
     {
         state.isVisible = false;
+    }
+
+    public void Show(){
+        state.isVisible = true;
     }
     public string asText()
     {
